@@ -24,7 +24,12 @@
       },
       "level": "Senior",
       "img": "src/assets/images/evan.png",
-      "message": "Hi! Please, change the status in this task"
+      "message": [
+        {
+          "text": "Hi! Please, change the status in this task",
+          "sender": "Evan Yates"
+        }
+      ]
     },
     {
       "id": 2,
