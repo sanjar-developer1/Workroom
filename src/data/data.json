@@ -1,0 +1,212 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Evan Yates",
+      "age": 22,
+      "position": "UI/UX Designer",
+      "company": "Cadabra",
+      "location": "NYC, New York, USA",
+      "date": "May 19,1996",
+      "contact": {
+        "email": "evanyates@gmail.com",
+        "phone": "+1 675 346 23-10"
+      },
+      "tasks": {
+        "backlogTask": 2,
+        "taskInProgress": 10,
+        "tasksInReview": 5
+      },
+      "vacations": {
+        "vacation": 15,
+        "sickLeave": 3,
+        "workRemotely": 50
+      },
+      "level": "Senior",
+      "img": "src/assets/images/evan.png",
+      "message": "Hi! Please, change the status in this task"
+    },
+    {
+      "id": 2,
+      "name": "Shawn Stone",
+      "age": 28,
+      "position": "UI/UX Designer",
+      "company": "Cadabra",
+      "location": "NYC, New York, USA",
+      "date": "May 19,1996",
+      "contact": {
+        "email": "shawnstone@gmail.com",
+        "phone": "+1 675 346 23-10"
+      },
+      "tasks": {
+        "backlogTask": 0,
+        "taskInProgress": 16,
+        "tasksInReview": 6
+      },
+      "vacations": {
+        "vacation": 10,
+        "sickLeave": 6,
+        "workRemotely": 34
+      },
+      "level": "Middle",
+      "img": "src/assets/images/shawn.png",
+      "message": "Hi! Please, change the status in this task"
+    },
+    {
+      "id": 3,
+      "name": "Emily Tyler",
+      "age": 22,
+      "position": "Copywriter",
+      "company": "Cadabra",
+      "location": "NYC, New York, USA",
+      "date": "May 19,1996",
+      "contact": {
+        "email": "emilytyler@gmail.com",
+        "phone": "+1 675 346 23-10"
+      },
+      "tasks": {
+        "backlogTask": 1,
+        "taskInProgress": 20,
+        "tasksInReview": 2
+      },
+      "vacations": {
+        "vacation": 10,
+        "sickLeave": 5,
+        "workRemotely": 19
+      },
+      "level": "Middle",
+      "img": "src/assets/images/emily.png",
+      "message": "Hi! Please, change the status in this task"
+    },
+    {
+      "id": 4,
+      "name": "Blake Silva",
+      "age": 25,
+      "position": "IOS Developer",
+      "company": "Cadabra",
+      "location": "NYC, New York, USA",
+      "date": "May 19,1996",
+      "contact": {
+        "email": "blakesilva@gmail.com",
+        "phone": "+1 675 346 23-10"
+      },
+      "tasks": {
+        "backlogTask": 0,
+        "taskInProgress": 20,
+        "tasksInReview": 2
+      },
+      "vacations": {
+        "vacation": 8,
+        "sickLeave": 7,
+        "workRemotely": 41
+      },
+      "level": "Senior",
+      "img": "src/assets/images/blake.png",
+      "message": "Hi! Please, change the status in this task"
+    },
+    {
+      "id": 5,
+      "name": "Oscar Holloway",
+      "age": 20,
+      "position": "UI/UX Designer",
+      "company": "Cadabra",
+      "location": "NYC, New York, USA",
+      "date": "May 19,1996",
+      "contact": {
+        "email": "oscarholloway@gmail.com",
+        "phone": "+1 675 346 23-10"
+      },
+      "tasks": {
+        "backlogTask": 1,
+        "taskInProgress": 20,
+        "tasksInReview": 2
+      },
+      "vacations": {
+        "vacation": 14,
+        "sickLeave": 4,
+        "workRemotely": 38
+      },
+      "level": "Middle",
+      "img": "src/assets/images/oscar.png",
+      "message": "Hi! Please, change the status in this task"
+    },
+    {
+      "id": 6,
+      "name": "Wayne Marsh",
+      "age": 24,
+      "position": "Copywriter",
+      "company": "Cadabra",
+      "location": "NYC, New York, USA",
+      "date": "May 19,1996",
+      "contact": {
+        "email": "waynemarsh@gmail.com",
+        "phone": "+1 675 346 23-10"
+      },
+      "tasks": {
+        "backlogTask": 1,
+        "taskInProgress": 14,
+        "tasksInReview": 3
+      },
+      "vacations": {
+        "vacation": 12,
+        "sickLeave": 6,
+        "workRemotely": 45
+      },
+      "level": "Junior",
+      "img": "src/assets/images/wayne.png",
+      "message": "Hi! Please, change the status in this task"
+    },
+    {
+      "id": 7,
+      "name": "Jeremy Barrett",
+      "age": 27,
+      "position": "Copywriter",
+      "company": "Cadabra",
+      "location": "NYC, New York, USA",
+      "date": "May 19,1996",
+      "contact": {
+        "email": "jeremybarrett@gmail.com",
+        "phone": "+1 675 346 23-10"
+      },
+      "tasks": {
+        "backlogTask": 0,
+        "taskInProgress": 8,
+        "tasksInReview": 6
+      },
+      "vacations": {
+        "vacation": 10,
+        "sickLeave": 5,
+        "workRemotely": 12
+      },
+      "level": "Middle",
+      "img": "src/assets/images/jeremy.png",
+      "message": "Hi! Please, change the status in this task"
+    },
+    {
+      "id": 8,
+      "name": "Lenora Fowler",
+      "age": 22,
+      "position": "Frontend Developer",
+      "company": "Algoritm",
+      "location": "NYC, New York, USA",
+      "date": "May 19,1986",
+      "contact": {
+        "email": "lenorafowler@gmail.com",
+        "phone": "+1 675 346 23-10"
+      },
+      "tasks": {
+        "backlogTask": 2,
+        "taskInProgress": 5,
+        "tasksInReview": 10
+      },
+      "vacations": {
+        "vacation": 6,
+        "sickLeave": 3,
+        "workRemotely": 10
+      },
+      "level": "Junior",
+      "img": "src/assets/images/lenora.png",
+      "message": "Hi! Please, change the status in this task"
+    }
+  ]
+}
