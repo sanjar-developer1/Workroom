@@ -30,7 +30,7 @@
                 </button>
             </form>
 
-            <router-link to="/forgot-password" class="forgot-password">
+            <router-link to="" class="forgot-password">
                 Don’t have an account?
             </router-link>
         </div>
@@ -69,6 +69,7 @@ export default {
                     text: "Iltimos, barcha maydonlarni to'ldiring",
                     duration: 3000,
                     gravity: "top",
+                    limit: 1,
                     position: "center",
                     backgroundColor: "#f44336",
                     close: true,
@@ -107,7 +108,6 @@ export default {
     font-weight: 700;
     font-size: calc(40/13.6*1vw);
     line-height: calc(56/13.6*1vw);
-    letter-spacing: 0px;
 
 }
 

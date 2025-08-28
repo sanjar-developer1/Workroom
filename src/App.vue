@@ -32,7 +32,6 @@ button {
   font-weight: 700;
   font-size: calc(16/13.6*1vw);
   line-height: 100%;
-  letter-spacing: 0px;
   gap: calc(5/13.6*1vw);
   border: none;
   border-radius: 1vw;

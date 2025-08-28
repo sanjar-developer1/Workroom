@@ -1,16 +1,16 @@
 <template>
     <div>
         <Stepper />
-        <Steep1 />
+        <Step1 />
     </div>
 </template>
 <script>
-import Steep1 from "./SignUp/steep1.vue";
+import Step1 from "./SignUp/step1.vue";
 import Stepper from "./SignUp/stepper.vue"
 export default {
     components: {
         Stepper,
-        Steep1
+        Step1
     }
 }
 </script>

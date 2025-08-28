@@ -77,21 +77,12 @@ export default {
     font-weight: 700;
     font-size: calc(14/13.6*1vw);
     line-height: 100%;
-    letter-spacing: 0px;
     text-align: center;
     text-transform: uppercase;
     color: #3F8CFF;
 }
 
-.step1 p {
-    font-family: Nunito Sans;
-    font-weight: 700;
-    font-size: calc(22/13.6*1vw);
-    line-height: 100%;
-    letter-spacing: 0px;
-    text-align: center;
-    margin-top: calc(6/13.6*1vw);
-}
+
 
 .phone-input {
     display: flex;
@@ -106,7 +97,6 @@ export default {
     font-weight: 700;
     font-size: calc(14/13.6*1vw);
     line-height: calc(24/13.6*1vw);
-    letter-spacing: 0px;
     color: #7D8592;
 }
 
@@ -127,7 +117,6 @@ export default {
     font-weight: 400;
     font-size: calc(14/13.6*1vw);
     line-height: calc(21/13.6*1vw);
-    letter-spacing: 0px;
     border-radius: calc(14/13.6*1vw);
 
 }
@@ -147,7 +136,6 @@ export default {
     font-family: Nunito Sans;
     font-weight: 400;
     line-height: calc(21/13.6*1vw);
-    letter-spacing: 0px;
     color: #0A1629;
 }
 
@@ -174,7 +162,6 @@ export default {
     font-weight: 700;
     font-size: calc(14/13.6*1vw);
     line-height: calc(24/13.6*1vw);
-    letter-spacing: 0px;
     color: #7D8592;
 }
 

@@ -68,7 +68,6 @@ const currentStep = ref(0) // qaysi stepda turganini boshqaradi
     font-weight: 700;
     font-size: calc(36/13.6*1vw);
     line-height: 100%;
-    letter-spacing: 0px;
     margin-bottom: calc(50/13.6*1vw);
 }
 
