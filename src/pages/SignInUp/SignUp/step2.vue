@@ -6,7 +6,8 @@
             <p>Tell about yourself</p>
             <div class="form-group">
                 <label for="email">Why will you use the service?</label>
-                <select name="service-reason" id="service-reason">
+                <select name="service-reason" id="service-reason" v-model="serviceReason">
+                    <option value="">Select an option</option>
                     <option value="personal">Personal</option>
                     <option value="business">Business</option>
                     <option value="education">Education</option>
@@ -14,33 +15,22 @@
             </div>
             <div class="form-group">
                 <label for="password">What describes you best?</label>
-                <select name="description" id="description">
+                <select name="description" id="description" v-model="description">
+                    <option value="">Select an option</option>
                     <option value="developer">Developer</option>
                     <option value="designer">Designer</option>
                     <option value="manager">Manager</option>
                     <option value="other">Other</option>
                 </select>
             </div>
-            <div class="step2-center">
-                <span>What describes you best?</span>
-                <div class="yes-no">
-                    <label for="">
-                        <input type="radio">
-                        Yes
-                    </label>
-                    <label for="">
-                        <input type="radio">
-                        No
-                    </label>
-                </div>
 
-            </div>
 
             <hr class="step2-hr">
             <div class="step2-bottom">
-                <button style="background-color: transparent; color: #3F8CFF;"><i class="fa-solid fa-arrow-left"></i>
+                <button @click="previous" style="background-color: transparent; color: #3F8CFF;"><i
+                        class="fa-solid fa-arrow-left"></i>
                     Previous</button>
-                <button to="">Next Step<i class="fa-solid fa-arrow-right"></i></button>
+                <button @click="nextStep">Next Step<i class="fa-solid fa-arrow-right"></i></button>
             </div>
         </div>
 
@@ -48,9 +38,49 @@
 </template>
 <script>
 import Stepper from './stepper.vue';
+import toastify from 'toastify-js';
 export default {
     components: {
         Stepper
+    },
+    data() {
+        return {
+            serviceReason: '',
+            description: '',
+        }
+    },
+    methods: {
+        nextStep() {
+            if (this.serviceReason && this.description) {
+                localStorage.setItem('serviceReason', this.serviceReason);
+                localStorage.setItem('description', this.description);
+
+                toastify({
+                    text: "Kirish muvaffaqiyatli",
+                    duration: 3000,
+                    gravity: "top",
+                    position: "center",
+                    backgroundColor: "#4caf50",
+                    close: true,
+                }).showToast();
+
+                this.$router.push('/step3');
+            }
+            else {
+                toastify({
+                    text: "Iltimos, barcha maydonlarni to'ldiring",
+                    duration: 3000,
+                    gravity: "top",
+                    limit: 1,
+                    position: "center",
+                    backgroundColor: "#f44336",
+                    close: true,
+                }).showToast();
+            }
+        },
+        previous() {
+            this.$router.push('/signUp');
+        }
     }
 }
 </script>

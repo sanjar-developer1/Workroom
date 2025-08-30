@@ -11,7 +11,7 @@
                     <option value="+1">+1</option>
                     <option value="+44">+44</option>
                 </select>
-                <input type="tel" id="phone" placeholder="90 123 45 67">
+                <input type="tel" id="phone" placeholder="90 123 45 67" v-model="phone">
             </div>
         </div>
         <div class="sms">
@@ -23,35 +23,65 @@
                 <input type="text" placeholder="4">
             </div>
         </div>
-        <div class="form-group">
-            <label for="email">Email Address</label>
-            <input id="email" v-model="email" type="email" placeholder="Enter your email" />
-        </div>
+        <form action="">
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input id="email" v-model="email" type="email" placeholder="Enter your email" />
+            </div>
 
-        <div class="form-group">
-            <label for="password">Create Password</label>
-            <input id="password" v-model="password" type="password" placeholder="Enter your password" />
-        </div>
+            <div class="form-group">
+                <label for="password">Create Password</label>
+                <input v-model="password" type="password" placeholder="Enter your password" />
+            </div>
+
+        </form>
 
         <hr class="step1-hr">
 
 
-        <button @click="nextStep">Next Step <i class="fa-solid fa-arrow-right"></i></button>
+        <button type="button" @click="nextStep">Next Step <i class="fa-solid fa-arrow-right"></i></button>
     </div>
 </template>
 <script>
+import toastify from 'toastify-js';
+
 export default {
     data() {
         return {
             email: '',
-            password: ''
+            password: '',
+            phone: ''
         }
     },
     methods: {
         nextStep() {
-            localStorage.setItem('email', this.email);
-            localStorage.setItem('password', this.password);
-            this.$router.push('/step2');
+            if (this.email && this.password && this.phone) {
+                localStorage.setItem('email', this.email);
+                localStorage.setItem('password', this.password);
+                localStorage.setItem('phone', this.phone);
+
+                toastify({
+                    text: "Kirish muvaffaqiyatli",
+                    duration: 3000,
+                    gravity: "top",
+                    position: "center",
+                    backgroundColor: "#4caf50",
+                    close: true,
+                }).showToast();
+
+                this.$router.push('/step2');
+            }
+            else {
+                toastify({
+                    text: "Iltimos, barcha maydonlarni to'ldiring",
+                    duration: 3000,
+                    gravity: "top",
+                    limit: 1,
+                    position: "center",
+                    backgroundColor: "#f44336",
+                    close: true,
+                }).showToast();
+            }
         }
     }
 }
@@ -120,6 +150,7 @@ export default {
     border-radius: calc(14/13.6*1vw);
 
 }
+
 
 .phone-row select:focus {
     border-color: #3f8cff;
