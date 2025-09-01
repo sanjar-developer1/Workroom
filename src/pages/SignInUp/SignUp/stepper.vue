@@ -5,7 +5,6 @@
     
     <div v-for="(label, index) in steps" :key="index" class="step">
       <div class="circle-wrapper">
-        <!-- Highlight active and completed -->
         <div
           class="circle"
           :class="{
@@ -24,7 +23,6 @@
 <script>
 export default {
   props: {
-    // step is 1-based (1,2,3,4)
     step: {
       type: Number,
       default: 1
@@ -59,7 +57,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: calc(8/13.6*1vw);
+  gap: calc(20/13.6*1vw);
   padding-bottom: calc(6.5/13.6*1vw);
 }
 
@@ -83,7 +81,6 @@ export default {
   margin-bottom: calc(60/13.6*1vw);
 }
 
-/* Circle base */
 .circle {
   width: calc(20/13.6*1vw);
   height: calc(20/13.6*1vw);
@@ -93,12 +90,10 @@ export default {
   transition: all 0.3s ease;
 }
 
-/* Current step */
 .circle.active {
   background: white;
 }
 
-/* Completed steps */
 .circle.completed {
   background: white;
   border-color: #3f8cff;
