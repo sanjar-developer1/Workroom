@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Stepper />
+        <Stepper step="1"/>
         <Step1 />
     </div>
 </template>

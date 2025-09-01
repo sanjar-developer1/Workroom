@@ -1,6 +1,6 @@
 <template>
     <div class="step4-wrapper">
-        <Stepper />
+        <Stepper step="4"/>
         <div class="step4">
             <span>Step 4/4</span>
             <p>Invite Team Members</p>
@@ -54,7 +54,7 @@ export default {
                     close: true,
                     gravity: "top",
                     position: "center",
-                    backgroundColor: "#4CAF50",
+                    background: "#4CAF50",
                 }).showToast();
             }
             else {
@@ -64,7 +64,7 @@ export default {
                     close: true,
                     gravity: "top",
                     position: "center",
-                    backgroundColor: "#FF5722",
+                    background: "#FF5722",
                 }).showToast();
             }
         },
@@ -73,7 +73,7 @@ export default {
         },
         nextStep() {
             const members = JSON.parse(localStorage.getItem('teamMembers') || '[]');
-
+            
             if (members.length > 0) {
                 toastify({
                     text: "Kirish muvaffaqiyatli",
@@ -81,9 +81,9 @@ export default {
                     close: true,
                     gravity: "top",
                     position: "center",
-                    backgroundColor: "#4CAF50",
+                    background: "#4CAF50",
                 }).showToast();
-                this.$router.push('/step5');
+                this.$router.push('/success')
             } else {
                 toastify({
                     text: "Yangi Member qo'shilishi kerak",
@@ -91,7 +91,7 @@ export default {
                     close: true,
                     gravity: "top",
                     position: "center",
-                    backgroundColor: "#FF5722",
+                    background: "#FF5722",
                 }).showToast();
             }
         }

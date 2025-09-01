@@ -56,16 +56,12 @@ export default {
     methods: {
         nextStep() {
             if (this.email && this.password && this.phone) {
-                localStorage.setItem('email', this.email);
-                localStorage.setItem('password', this.password);
-                localStorage.setItem('phone', this.phone);
-
                 toastify({
                     text: "Kirish muvaffaqiyatli",
                     duration: 3000,
                     gravity: "top",
                     position: "center",
-                    backgroundColor: "#4caf50",
+                    background: "#4caf50",
                     close: true,
                 }).showToast();
 
@@ -78,7 +74,7 @@ export default {
                     gravity: "top",
                     limit: 1,
                     position: "center",
-                    backgroundColor: "#f44336",
+                    background: "#f44336",
                     close: true,
                 }).showToast();
             }

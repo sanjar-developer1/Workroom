@@ -1,6 +1,6 @@
 <template>
     <div class="step2-wrapper">
-        <Stepper />
+        <Stepper step="2"/>
         <div class="step2">
             <span>STEP 2/4</span>
             <p>Tell about yourself</p>
@@ -27,7 +27,7 @@
 
             <hr class="step2-hr">
             <div class="step2-bottom">
-                <button @click="previous" style="background-color: transparent; color: #3F8CFF;"><i
+                <button @click="previous" style="background: transparent; color: #3F8CFF;"><i
                         class="fa-solid fa-arrow-left"></i>
                     Previous</button>
                 <button @click="nextStep">Next Step<i class="fa-solid fa-arrow-right"></i></button>
@@ -60,7 +60,7 @@ export default {
                     duration: 3000,
                     gravity: "top",
                     position: "center",
-                    backgroundColor: "#4caf50",
+                    background: "#4caf50",
                     close: true,
                 }).showToast();
 
@@ -73,7 +73,7 @@ export default {
                     gravity: "top",
                     limit: 1,
                     position: "center",
-                    backgroundColor: "#f44336",
+                    background: "#f44336",
                     close: true,
                 }).showToast();
             }

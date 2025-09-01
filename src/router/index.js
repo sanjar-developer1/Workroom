@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 
 
-import SignIn from "../pages/SignInUp/sigIn.vue";
+import SignIn from "../pages/SignInUp/signIn.vue";
 import SignUp from "../pages/SignInUp/signUp.vue";
 import Step1 from "../pages/SignInUp/SignUp/step1.vue";
 import Step2 from "../pages/SignInUp/SignUp/step2.vue";
@@ -60,7 +60,7 @@ const routes = [
     component: Success,
   },
   {
-    path: "/newProject",
+    path: "/addProject",
     component: addProject,
   },
   {

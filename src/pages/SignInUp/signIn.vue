@@ -30,7 +30,7 @@
                 </button>
             </form>
 
-            <router-link to="" class="forgot-password">
+            <router-link to="/signUp" class="forgot-password">
                 Don’t have an account?
             </router-link>
         </div>
