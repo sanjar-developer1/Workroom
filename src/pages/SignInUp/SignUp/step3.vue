@@ -1,6 +1,6 @@
 <template>
     <div class="step3-wrapper">
-        <Stepper />
+        <Stepper step="3"/>
         <div class="step3">
             <span>Step 3/4</span>
             <p>Tell about your company</p>
@@ -80,7 +80,7 @@ export default {
                     duration: 3000,
                     gravity: "top",
                     position: "center",
-                    backgroundColor: "#4caf50",
+                    background: "#4caf50",
                     close: true,
                 }).showToast();
 
@@ -93,7 +93,7 @@ export default {
                     gravity: "top",
                     limit: 1,
                     position: "center",
-                    backgroundColor: "#f44336",
+                    background: "#f44336",
                     close: true,
                 }).showToast();
             }
