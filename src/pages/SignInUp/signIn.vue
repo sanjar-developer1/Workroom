@@ -51,19 +51,16 @@ export default {
     methods: {
         kirish() {
             if (this.email && this.password) {
-                localStorage.setItem("email", this.email);
-                localStorage.setItem("password", this.password);
-
                 Toastify({
                     text: "Kirish muvaffaqiyatli",
                     duration: 3000,
                     gravity: "top",
                     position: "center",
-                    backgroundColor: "#4caf50",
+                    background: "#4caf50",
                     close: true,
                 }).showToast();
 
-                this.$router.push("/signUp");
+                this.$router.push("/dashboard");
             } else {
                 Toastify({
                     text: "Iltimos, barcha maydonlarni to'ldiring",
@@ -71,7 +68,7 @@ export default {
                     gravity: "top",
                     limit: 1,
                     position: "center",
-                    backgroundColor: "#f44336",
+                    background: "#f44336",
                     close: true,
                 }).showToast();
             }
