@@ -1,5 +1,7 @@
 <template>
-  <router-view></router-view>
+  <div class="div">
+    <router-view></router-view>
+  </div>
 </template>
 <script>
 
@@ -35,5 +37,11 @@ button {
   gap: calc(5/13.6*1vw);
   border: none;
   border-radius: 1vw;
+}
+
+.div {
+  width: 100vw;
+  overflow-x: hidden;
+  background: #F4F9FD;
 }
 </style>

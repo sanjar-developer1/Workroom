@@ -1,11 +1,17 @@
 <template>
     <div>
-        <h1>Dashboard</h1>
+        <Sidebar />
     </div>
 </template>
 <script>
-export default {
+import Sidebar from '../../components/Sidebar.vue'
 
+export default {
+    components: {
+        Sidebar
+    }
 }
 </script>
+
+
 <style></style>

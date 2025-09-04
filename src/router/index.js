@@ -28,7 +28,7 @@ import CalendarVacations from '../pages/Vacations/CalendarVacations.vue'
 import InfoPortal from '../pages/InfoPortal/InfoPortal.vue'
 import InfoFolder from '../pages/InfoPortal/InfoFolder.vue'
 import Messenger from '../pages/Messenger/Messenger.vue'
- 
+
 
 const routes = [
   {
