@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 
-
+import TokenCheck from '../pages/Token.vue'
 import SignIn from "../pages/SignInUp/signIn.vue";
 import SignUp from "../pages/SignInUp/signUp.vue";
 import Step1 from "../pages/SignInUp/SignUp/step1.vue";
@@ -33,6 +33,10 @@ import Messenger from '../pages/Messenger/Messenger.vue'
 const routes = [
   {
     path: "/",
+    component: TokenCheck
+  },
+  {
+    path: "/login",
     component: SignIn,
   },
   {
