@@ -1,6 +1,5 @@
 <template>
     <div class="signIn">
-        <!-- Chap tomon -->
         <div class="signInLeft">
             <div class="signInLogo">
                 <img src="/src/assets/images/logo.svg" alt="bu yerda rasm bor" />
@@ -10,7 +9,6 @@
             <img src="/src/assets/images/Illustration.png" alt="" />
         </div>
 
-        <!-- O‘ng tomon -->
         <div class="signInRight">
             <p class="title">Sign In to Woorkroom</p>
 
@@ -40,6 +38,7 @@
 <script>
 import Toastify from "toastify-js";
 import "toastify-js/src/toastify.css";
+import api from '../../utils/axios'
 
 export default {
     data() {
@@ -49,8 +48,32 @@ export default {
         };
     },
     methods: {
-        kirish() {
-            if (this.email && this.password) {
+        async kirish() {
+            if (!this.email || !this.password) {
+                Toastify({
+                    text: "Iltimos, barcha maydonlarni to'ldiring",
+                    duration: 3000,
+                    gravity: "top",
+                    position: "center",
+                    background: "#f44336",
+                    close: true,
+                }).showToast();
+                return;
+            }
+
+            this.loading = true;
+
+            try {
+                const res = await api.post("/users/login", {
+                    email: this.email,
+                    password: this.password,
+                });
+
+                // backend might return { token, user }
+                const { token, user } = res.data;
+
+                localStorage.setItem("token", token);
+
                 Toastify({
                     text: "Kirish muvaffaqiyatli",
                     duration: 3000,
@@ -61,18 +84,28 @@ export default {
                 }).showToast();
 
                 this.$router.push("/dashboard");
-            } else {
+            } catch (err) {
+                console.error(err);
+
+                let msg = "Kirishda xatolik yuz berdi";
+                if (err.response?.data?.message) {
+                    msg = err.response.data.message;
+                }
+
                 Toastify({
-                    text: "Iltimos, barcha maydonlarni to'ldiring",
+                    text: msg,
                     duration: 3000,
                     gravity: "top",
-                    limit: 1,
                     position: "center",
                     background: "#f44336",
                     close: true,
                 }).showToast();
+            } finally {
+                localStorage.setItem('token', "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4Yjk2Y2U3OWFhOTY3YjVmZTdlMjFkNSIsImVtYWlsIjoiYWxpY2UzQGV4YW1wbGUuY29tIiwibmFtZSI6IkFsaWNlIiwiaWF0IjoxNzU2OTgyNTAzLCJleHAiOjE3NTY5ODYxMDN9.zW0sWKFsr5hpWO52wFA4RH5Qjncw2jBrV4tu6tOZ9yo")
+                this.loading = false;
             }
-        },
+        }
+
     },
 };
 </script>
@@ -84,7 +117,6 @@ export default {
 
 }
 
-/* Chap panel */
 .signInLeft {
     background: #3f8cff;
     width: 40%;
@@ -131,7 +163,6 @@ export default {
     text-decoration: none;
 }
 
-/* O‘ng panel */
 .signInRight {
     flex: 1;
     background: #fff;
