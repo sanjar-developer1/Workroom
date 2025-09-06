@@ -31,20 +31,86 @@
             </ul>
         </div>
         <div class="sidebar-center">
-            <router-link class="sidebar-center-support" to="">
+            <div @click="modal" class="sidebar-center-support">
                 <img src="../assets/images/support.png" alt="bu yerda support icon bor" />
                 <button><i class="fa-regular fa-comment"></i>Support</button>
-            </router-link>
+            </div>
             <router-link to="/" class="logout"><i class="fa-solid fa-right-from-bracket"></i>Logout</router-link>
+        </div>
+    </div>
+    <div class="modal" v-show="modalShow">
+        <div class="support">
+            <div class="support-top">
+                <p>Need some Help?</p>
+                <div class="x">
+                    <i @click="modalShow = false" class="fa-solid fa-xmark" style="cursor: pointer;"></i>
+                </div>
+            </div>
+            <img src="../assets/images/support-img.png" alt="bu yerda support bor">
+            <p>Describe your question and our specialists will answer you within 24 hours.</p>
+            <div class="form-group">
+                <label>Request Subject</label>
+                <select aria-placeholder="Select an option" class="form-control">
+                    <option>Technical difficulties</option>
+                    <option>Design issues</option>
+                    <option>Managerial concerns</option>
+                    <option>Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea name="description" id="description"
+                    placeholder="Add some description of the request"></textarea>
+            </div>
+            <button @click="sendRequest">Send Request</button>
         </div>
     </div>
 </template>
 
 <script>
-export default {};
+import toastify from 'toastify-js';
+
+export default {
+
+    data() {
+        return {
+            modalShow: false
+        }
+    },
+    methods: {
+        modal() {
+            this.modalShow = true;
+        },
+        sendRequest() {
+            this.modalShow = false;
+            toastify({
+                text: "Request sent successfully!",
+                duration: 3000,
+                close: true,
+                gravity: "top",
+                position: "center",
+                backgroundColor: "#3F8CFF",
+            }).showToast();
+        }
+    }
+};
 </script>
 
 <style scoped>
+.modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(1px);
+}
+
 .sidebar2 {
     width: calc(200 / 13.6 * 1vw);
     height: 100%;
@@ -174,4 +240,102 @@ ul {
     justify-content: space-between;
     color: #7D8592;
 }
+
+
+/* support style start */
+.support {
+    padding: calc(30/13.6*1vw);
+    background-color: #FFFFFF;
+    border-radius: calc(24/13.6*1vw);
+    display: flex;
+    align-items: left;
+    justify-content: center;
+    flex-direction: column;
+    width: calc(375/13.6*1vw);
+}
+
+
+
+.support-top {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.support-top p {
+    font-family: Nunito Sans;
+    font-weight: 700;
+    font-size: calc(22/13.6*1vw);
+    line-height: 100%;
+    letter-spacing: 0px;
+    color: #0A1629;
+}
+
+.x {
+    background-color: #F4F9FD;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1vw;
+    width: calc(44/13.6*1vw);
+    height: calc(44/13.6*1vw);
+}
+
+.x i {
+    font-size: calc(20/13.6*1vw);
+    padding: 0;
+    margin: 0;
+}
+
+.support img {
+    width: calc(310/13.6*1vw);
+    height: calc(150/13.6*1vw);
+    cursor: pointer;
+}
+
+.support>p {
+    font-family: Nunito Sans;
+    font-weight: 400;
+    font-size: calc(16/13.6*1vw);
+    line-height: calc(24/13.6*1vw);
+    letter-spacing: 0px;
+    margin-top: calc(30/13.6*1vw);
+    color: #7D8592;
+    text-align: left;
+    width: calc(310/13.6*1vw);
+
+}
+
+.form-control {
+    width: calc(310/13.6*1vw);
+    height: calc(44/13.6*1vw);
+    border: 1px solid #D1D9E6;
+    border-radius: calc(14/13.6*1vw);
+    padding: calc(10/13.6*1vw);
+}
+
+.form-group textarea {
+    border: 1px solid #D8E0F0;
+    outline: none;
+    resize: none;
+    width: 100%;
+    height: calc(120/13.6*1vw);
+    font-size: 1vw;
+    padding: calc(11/13.6*1vw) calc(18/13.6*1vw);
+    box-sizing: border-box;
+    border-radius: 1vw;
+}
+
+.support button {
+    margin-top: calc(20/13.6*1vw);
+    font-family: Nunito Sans;
+    font-weight: 700;
+    font-size: calc(16/13.6*1vw);
+    line-height: 100%;
+    letter-spacing: 0px;
+    padding: 1vw calc(20/13.6*1vw);
+}
+
+/* support style end */
 </style>

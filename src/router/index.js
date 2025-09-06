@@ -143,6 +143,7 @@ const routes = [
     path: "/messenger",
     component: Messenger
   }
+
 ];
 
 // route boyicha faylni qidiryatganda figmaga etiborlik bolinglar, figmadagi holatlar (hover va shunga oxshaganlar)ni yozmadim!
