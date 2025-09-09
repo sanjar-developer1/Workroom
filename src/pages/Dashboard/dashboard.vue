@@ -26,13 +26,15 @@
           <p>Dashboard</p>
         </div>
       </div>
+
       <div class="dashboard-bottom">
+        <!-- workload -->
         <div class="workload">
           <div class="workload-top">
             <p>Workload</p>
             <router-link to="/profile" class="view-all">
-              View all <i class="fa-solid fa-chevron-right"></i
-            ></router-link>
+              View all <i class="fa-solid fa-chevron-right"></i>
+            </router-link>
           </div>
           <div class="user-wrapper">
             <div class="users" v-for="(user, index) in users" :key="index">
@@ -42,23 +44,60 @@
             </div>
           </div>
         </div>
+
+        <!-- nearest events -->
+        <!-- nearest events -->
         <div class="near-events">
           <div class="near-top">
             <p>Nearest Events</p>
-            <router-link to="/nearestEvents" class="view-all"
-              >View all <i class="fa-solid fa-chevron-right"></i
-            ></router-link>
+            <router-link to="/nearestEvents" class="view-all">
+              View all <i class="fa-solid fa-chevron-right"></i>
+            </router-link>
+          </div>
+
+          <div
+            class="event-card"
+            v-for="event in sortedEvents.slice(0, 3)"
+            :key="event.id"
+          >
+            <div
+              class="event-line"
+              :class="{
+                'event-line-blue': isNearest(event),
+                'event-line-pink': !isNearest(event),
+              }"
+            ></div>
+
+            <div class="event-info">
+              <h3>{{ event.title }}</h3>
+              <p>{{ formatDate(event.date) }} | {{ event.time }}</p>
+            </div>
+
+            <div class="event-right">
+              <span class="event-duration">
+                <i class="fa-regular fa-clock"></i> {{ event.duration }}
+              </span>
+              <i
+                class="fa-solid"
+                :class="{
+                  'fa-arrow-up text-yellow': isNearest(event),
+                  'fa-arrow-down text-green': !isNearest(event),
+                }"
+              ></i>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
 </template>
+
 <script>
 import Sidebar from "../../components/sidebar.vue";
 import api from "../../utils/axios";
 
 import data from "../../data/data.json";
+import events from "../../data/events.json";
 
 export default {
   name: "Dashboard",
@@ -66,7 +105,7 @@ export default {
   data() {
     return {
       users: data,
-      events: [],
+      events,
     };
   },
   components: {
@@ -76,19 +115,38 @@ export default {
     async getUsers() {
       try {
         const res = await api.get("/users/users");
-        // const res2 = await api.get("/events"); bu hatolik events bilan bog'liq
-
         this.users = res.data;
-        // this.events = res2.data;
-        // console.log("Events", res2);
-        console.log("Users", res);
       } catch (error) {
         console.error("Users kelmadi", error);
       }
     },
+    isNearest(event) {
+      const now = new Date();
+      const eventDate = new Date(`${event.date}T${event.time}`);
+      const futureEvents = this.sortedEvents.filter(
+        (e) => new Date(`${e.date}T${e.time}`) > now
+      );
+      return futureEvents.length > 0 && futureEvents[0].id === event.id;
+    },
+    formatDate(date) {
+      const today = new Date().toISOString().split("T")[0];
+      const tomorrow = new Date(Date.now() + 86400000)
+        .toISOString()
+        .split("T")[0];
+
+      if (date === today) return "Today";
+      if (date === tomorrow) return "Tomorrow";
+      return date;
+    },
   },
-  mounted() {
-    // this.getUsers();
+  computed: {
+    sortedEvents() {
+      return [...this.events].sort((a, b) => {
+        const dateA = new Date(`${a.date}T${a.time}`);
+        const dateB = new Date(`${b.date}T${b.time}`);
+        return dateA - dateB;
+      });
+    },
   },
 };
 </script>
@@ -141,6 +199,11 @@ export default {
   outline: none;
   transition: box-shadow 0.15s, border-color 0.15s;
   margin-left: calc(10 / 13.6 * 1vw);
+  font-family: Nunito Sans;
+  font-weight: 400;
+  font-size: calc(16 / 13.6 * 1vw);
+  line-height: 100%;
+  letter-spacing: 0px;
 }
 
 .search input:focus {
@@ -231,7 +294,7 @@ export default {
 
 .dashboard-bottom {
   display: flex;
-  align-items: center;
+  align-items: top;
   justify-content: center;
   gap: calc(30 / 13.6 * 1vw);
 }
@@ -331,5 +394,100 @@ export default {
   line-height: calc(21 / 13.6 * 1vw);
   letter-spacing: 0px;
   text-align: center;
+}
+
+/* near events davomi */
+
+.near-events {
+  width: calc(500 / 13.6 * 1vw);
+  background-color: #ffffff;
+  border-radius: calc(24 / 13.6 * 1vw);
+  padding: calc(25 / 13.6 * 1vw);
+  display: flex;
+  flex-direction: column;
+  gap: calc(16 / 13.6 * 1vw);
+}
+
+.near-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: calc(12 / 13.6 * 1vw);
+}
+
+.near-top p {
+  font-family: Nunito Sans;
+  font-weight: 700;
+  font-size: calc(22 / 13.6 * 1vw);
+  line-height: 100%;
+}
+
+/* event styles */
+.event-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f9fafb;
+  border-radius: calc(16 / 13.6 * 1vw);
+  padding: calc(14 / 13.6 * 1vw);
+  gap: calc(14 / 13.6 * 1vw);
+}
+
+.event-line {
+  width: calc(4 / 13.6 * 1vw);
+  border-radius: calc(2 / 13.6 * 1vw);
+  align-self: stretch;
+}
+
+.event-line-blue {
+  background: #3f8cff;
+}
+
+.event-line-pink {
+  background: #d946ef;
+}
+
+.event-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: calc(6 / 13.6 * 1vw);
+}
+
+.event-info h3 {
+  font-family: Nunito Sans;
+  font-weight: 600;
+  font-size: calc(16 / 13.6 * 1vw);
+  margin: 0;
+}
+
+.event-info p {
+  font-family: Nunito Sans;
+  font-weight: 400;
+  font-size: calc(14 / 13.6 * 1vw);
+  color: #6b7280;
+  margin: 0;
+}
+
+.event-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: calc(8 / 13.6 * 1vw);
+}
+
+.event-duration {
+  font-family: Nunito Sans;
+  font-weight: 600;
+  font-size: calc(13 / 13.6 * 1vw);
+  color: #374151;
+}
+
+.text-yellow {
+  color: #fbbf24;
+}
+
+.text-green {
+  color: #10b981;
 }
 </style>
