@@ -1,0 +1,146 @@
+[
+  {
+    "id": "48291736",
+    "name": "Abdulaziz",
+    "email": "abdulaziz@example.com",
+    "password": "aziz12345",
+    "age": 20,
+    "position": "Developer",
+    "company": "TechnoSoft",
+    "location": "Tashkent",
+    "birthday": "2005-07-15",
+    "phone": 998931112233,
+    "tasks": {
+      "backLogTasks": 4,
+      "taskInProgress": 1,
+      "taskInReview": 2
+    },
+    "image": "https://picsum.photos/id/567/200/200"
+  },
+  {
+    "id": "73920184",
+    "name": "Dilshod",
+    "email": "dilshod@example.com",
+    "password": "dil12345",
+    "age": 25,
+    "position": "Designer",
+    "company": "Innova",
+    "location": "Samarkand",
+    "birthday": "1999-03-22",
+    "phone": 998901234567,
+    "tasks": {
+      "backLogTasks": 3,
+      "taskInProgress": 2,
+      "taskInReview": 1
+    },
+    "image": "https://picsum.photos/id/1012/200/200"
+  },
+  {
+    "id": "56290371",
+    "name": "Malika",
+    "email": "malika@example.com",
+    "password": "malika12",
+    "age": 28,
+    "position": "Manager",
+    "company": "DesignPro",
+    "location": "Bukhara",
+    "birthday": "1996-11-10",
+    "phone": 998907654321,
+    "tasks": {
+      "backLogTasks": 5,
+      "taskInProgress": 3,
+      "taskInReview": 2
+    },
+    "image": "https://picsum.photos/id/1013/200/200"
+  },
+  {
+    "id": "29581746",
+    "name": "Javlon",
+    "email": "javlon@example.com",
+    "password": "javlon77",
+    "age": 22,
+    "position": "Developer",
+    "company": "SoftVision",
+    "location": "Namangan",
+    "birthday": "2002-02-14",
+    "phone": 998935551122,
+    "tasks": {
+      "backLogTasks": 2,
+      "taskInProgress": 1,
+      "taskInReview": 1
+    },
+    "image": "https://picsum.photos/id/1014/200/200"
+  },
+  {
+    "id": "80451392",
+    "name": "Gulnoza",
+    "email": "gulnoza@example.com",
+    "password": "gul2024",
+    "age": 27,
+    "position": "Designer",
+    "company": "ArtHouse",
+    "location": "Andijan",
+    "birthday": "1997-08-30",
+    "phone": 998936667788,
+    "tasks": {
+      "backLogTasks": 6,
+      "taskInProgress": 2,
+      "taskInReview": 4
+    },
+    "image": "https://picsum.photos/id/1015/200/200"
+  },
+  {
+    "id": "39105628",
+    "name": "Sherzod",
+    "email": "sherzod@example.com",
+    "password": "sher777",
+    "age": 30,
+    "position": "Manager",
+    "company": "BizPro",
+    "location": "Fergana",
+    "birthday": "1994-01-19",
+    "phone": 998935009988,
+    "tasks": {
+      "backLogTasks": 3,
+      "taskInProgress": 2,
+      "taskInReview": 5
+    },
+    "image": "https://picsum.photos/id/1016/200/200"
+  },
+  {
+    "id": "64089215",
+    "name": "Madina",
+    "email": "madina@example.com",
+    "password": "madina55",
+    "age": 24,
+    "position": "Developer",
+    "company": "CodeLab",
+    "location": "Khiva",
+    "birthday": "2000-05-12",
+    "phone": 998932221144,
+    "tasks": {
+      "backLogTasks": 2,
+      "taskInProgress": 3,
+      "taskInReview": 1
+    },
+    "image": "https://picsum.photos/id/54/200/200"
+  },
+  {
+    "id": "71904583",
+    "name": "Iroda",
+    "email": "iroda@example.com",
+    "password": "iroda99",
+    "age": 26,
+    "position": "Designer",
+    "company": "PixelArt",
+    "location": "Nukus",
+    "birthday": "1998-04-25",
+    "phone": 998939998877,
+    "tasks": {
+      "backLogTasks": 4,
+      "taskInProgress": 1,
+      "taskInReview": 3
+    },
+    "image": "https://picsum.photos/id/1018/200/200"
+  }
+]

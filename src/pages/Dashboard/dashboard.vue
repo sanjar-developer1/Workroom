@@ -30,19 +30,18 @@
         <div class="workload">
           <div class="workload-top">
             <p>Workload</p>
-            <router-link to="/" class="view-all">
+            <router-link to="/profile" class="view-all">
               View all <i class="fa-solid fa-chevron-right"></i
             ></router-link>
           </div>
           <div class="user-wrapper">
             <div class="users" v-for="(user, index) in users" :key="index">
-              <img src="../../assets/images/evan.png" alt="bu yerda evan bor" />
+              <img :src="user.image" alt="bu yerda evan bor" />
               <p>{{ user.name }}</p>
-              <p>{{ user.position }}</p>
+              <span>{{ user.position }}</span>
             </div>
           </div>
         </div>
-
         <div class="near-events">
           <div class="near-top">
             <p>Nearest Events</p>
@@ -59,12 +58,15 @@
 import Sidebar from "../../components/sidebar.vue";
 import api from "../../utils/axios";
 
+import data from "../../data/data.json";
+
 export default {
   name: "Dashboard",
 
   data() {
     return {
-      users: [],
+      users: data,
+      events: [],
     };
   },
   components: {
@@ -74,16 +76,19 @@ export default {
     async getUsers() {
       try {
         const res = await api.get("/users/users");
+        // const res2 = await api.get("/events"); bu hatolik events bilan bog'liq
 
         this.users = res.data;
+        // this.events = res2.data;
+        // console.log("Events", res2);
         console.log("Users", res);
-      } catch {
+      } catch (error) {
         console.error("Users kelmadi", error);
       }
     },
   },
   mounted() {
-    this.getUsers();
+    // this.getUsers();
   },
 };
 </script>
@@ -119,12 +124,12 @@ export default {
 
 .search i {
   position: absolute;
-  left: 12px;
+  left: calc(12 / 13.6 * 1vw);
   top: 50%;
   transform: translateY(-50%);
   color: #6b7280;
   /* kulrang */
-  font-size: 16px;
+  font-size: calc(16 / 13.6 * 1vw);
 }
 
 .search input {
@@ -132,7 +137,7 @@ export default {
   padding: calc(10 / 13.6 * 1vw) calc(12 / 13.6 * 1vw) calc(10 / 13.6 * 1vw)
     calc(38 / 13.6 * 1vw);
   border: 1px solid #d1d5db;
-  border-radius: 10px;
+  border-radius: calc(10 / 13.6 * 1vw);
   outline: none;
   transition: box-shadow 0.15s, border-color 0.15s;
   margin-left: calc(10 / 13.6 * 1vw);
@@ -288,6 +293,8 @@ export default {
 .user-wrapper {
   gap: calc(16 / 13.6 * 1vw);
   margin-top: calc(20 / 13.6 * 1vw);
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .users {
@@ -298,10 +305,31 @@ export default {
   padding: calc(20 / 13.6 * 1vw) calc(35 / 13.6 * 1vw);
   border-radius: calc(24 / 13.6 * 1vw);
   background-color: #f4f9fd;
+  width: calc(165 / 13.6 * 1vw);
 }
 
 .users img {
   width: calc(50 / 13.6 * 1vw);
   height: calc(50 / 13.6 * 1vw);
+  border-radius: 50%;
+}
+
+.users p {
+  font-family: Nunito Sans;
+  font-weight: 700;
+  font-size: calc(16 / 13.6 * 1vw);
+  line-height: 100%;
+  letter-spacing: 0px;
+  text-align: center;
+  margin-top: calc(20 / 13.6 * 1vw);
+}
+
+.users span {
+  font-family: Nunito Sans;
+  font-weight: 400;
+  font-size: calc(14 / 13.6 * 1vw);
+  line-height: calc(21 / 13.6 * 1vw);
+  letter-spacing: 0px;
+  text-align: center;
 }
 </style>

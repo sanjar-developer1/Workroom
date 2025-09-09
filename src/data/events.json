@@ -1,0 +1,44 @@
+[
+    {
+        "id": 1,
+        "title": "Presentation of the new department",
+        "date": "2025-09-09",
+        "time": "17:00",
+        "duration": "4h"
+    },
+    {
+        "id": 2,
+        "title": "Weekly Team Meeting",
+        "date": "2025-09-10",
+        "time": "10:00",
+        "duration": "2h"
+    },
+    {
+        "id": 3,
+        "title": "Client Feedback Session",
+        "date": "2025-09-11",
+        "time": "15:00",
+        "duration": "1.5h"
+    },
+    {
+        "id": 4,
+        "title": "Design Workshop",
+        "date": "2025-09-12",
+        "time": "11:00",
+        "duration": "3h"
+    },
+    {
+        "id": 5,
+        "title": "Code Review",
+        "date": "2025-09-13",
+        "time": "14:00",
+        "duration": "2h"
+    },
+    {
+        "id": 6,
+        "title": "Sprint Planning",
+        "date": "2025-09-15",
+        "time": "09:00",
+        "duration": "2.5h"
+    }
+]
