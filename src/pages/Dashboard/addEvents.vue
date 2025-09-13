@@ -84,12 +84,12 @@ export default {
       };
 
       toastify({
-        text: "Mufoqiyatli qoshildi",
+        text: "Muvofaqqiyatli qo'shildi",
         duration: 3000,
         gravity: "top",
         position: "center",
         background: "#4caf50",
-        close: true,
+        close: false,
       }).showToast();
     },
   },
