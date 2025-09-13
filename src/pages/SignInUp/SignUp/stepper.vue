@@ -2,19 +2,16 @@
   <div class="sidebar">
     <img src="/src/assets/images/logo.svg" alt="bu yerda logo svg bor" class="logo-svg">
     <h1 class="get-started">Get Started</h1>
-    
+
     <div v-for="(label, index) in steps" :key="index" class="step">
       <div class="circle-wrapper">
-        <div
-          class="circle"
-          :class="{
-            active: step === index + 1,
-            completed: step > index + 1
-          }"
-        ></div>
+        <div class="circle" :class="{
+          active: step === index + 1,
+          completed: step > index + 1
+        }"></div>
         <p>{{ label }}</p>
       </div>
-      
+
       <div v-if="index < steps.length - 1" class="line"></div>
     </div>
   </div>
@@ -24,7 +21,7 @@
 export default {
   props: {
     step: {
-      type: Number,
+      type: String,
       default: 1
     }
   },

@@ -1,6 +1,6 @@
 <template>
     <div class="step4-wrapper">
-        <Stepper step="4"/>
+        <Stepper step="4" />
         <div class="step4">
             <span>Step 4/4</span>
             <p>Invite Team Members</p>
@@ -73,7 +73,7 @@ export default {
         },
         nextStep() {
             const members = JSON.parse(localStorage.getItem('teamMembers') || '[]');
-            
+
             if (members.length > 0) {
                 toastify({
                     text: "Kirish muvaffaqiyatli",
@@ -82,7 +82,8 @@ export default {
                     gravity: "top",
                     position: "center",
                     background: "#4CAF50",
-                }).showToast();
+                }).showToast();               
+
                 this.$router.push('/success')
             } else {
                 toastify({

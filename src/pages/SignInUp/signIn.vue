@@ -45,6 +45,7 @@ export default {
         return {
             email: "",
             password: "",
+            res: null || JSON.parse(localStorage.getItem('user'))
         };
     },
     methods: {
@@ -64,12 +65,11 @@ export default {
             this.loading = true;
 
             try {
-                const res = await api.post("/users/login", {
+                this.res = await api.post("/users/login", {
                     email: this.email,
                     password: this.password,
                 });
 
-                // backend might return { token, user }
                 const { token, user } = res.data;
 
                 localStorage.setItem("token", token);
@@ -103,6 +103,7 @@ export default {
             } finally {
                 localStorage.setItem('token', "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4Yjk2Y2U3OWFhOTY3YjVmZTdlMjFkNSIsImVtYWlsIjoiYWxpY2UzQGV4YW1wbGUuY29tIiwibmFtZSI6IkFsaWNlIiwiaWF0IjoxNzU2OTgyNTAzLCJleHAiOjE3NTY5ODYxMDN9.zW0sWKFsr5hpWO52wFA4RH5Qjncw2jBrV4tu6tOZ9yo")
                 this.loading = false;
+                localStorage.setItem('user', JSON.stringify(this.res))
             }
         }
 

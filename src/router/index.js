@@ -12,6 +12,7 @@ import addProject from '../pages/Add/addProject.vue';
 import ProjectDetails from "../pages/Add/projects.vue"
 import Dashboard from '../pages/Dashboard/dashboard.vue'
 import NearestEvents from '../pages/Dashboard/events.vue'
+import project from "../pages/projects/project.vue"
 import Projects from '../pages/projects/projects.vue'
 import ProjectBoard from '../pages/projects/ProjectBoard.vue'
 import ProjectTimeline from '../pages/projects/ProjectTimeline.vue'
@@ -142,6 +143,10 @@ const routes = [
   {
     path: "/messenger",
     component: Messenger
+  },
+  {
+    path: "/project/:projectId",
+    component: project
   }
 ];
 
