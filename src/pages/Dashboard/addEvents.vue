@@ -10,28 +10,32 @@
       </div>
 
       <!-- Form -->
-      <form class="project-form">
+      <form class="project-form" @submit.prevent="createEvents">
         <div class="form-group">
           <label>Project Name</label>
-          <input type="text" placeholder="Project Name" />
+          <input
+            type="text"
+            v-model="project.name"
+            placeholder="Project Name"
+          />
         </div>
 
         <div class="form-row">
           <div class="form-group half">
             <label>Starts</label>
-            <input type="date" />
+            <input type="date" v-model="project.starts" />
           </div>
           <div class="form-group half">
             <label>Deadline</label>
-            <input type="date" />
+            <input type="date" v-model="project.deadline" />
           </div>
         </div>
 
         <div class="form-group">
           <label>Priority</label>
-          <select>
+          <select v-model="project.priority">
             <option>Low</option>
-            <option selected>Medium</option>
+            <option>Medium</option>
             <option>High</option>
           </select>
         </div>
@@ -39,6 +43,7 @@
         <div class="form-group">
           <label>Description</label>
           <textarea
+            v-model="project.description"
             placeholder="Add some description of the project"
           ></textarea>
         </div>
@@ -49,8 +54,46 @@
   </div>
 </template>
 
-<script setup>
-// hech narsa kerak emas
+<script >
+import api from "../../utils/axios";
+import toastify from "toastify-js";
+
+export default {
+  data() {
+    return {
+      project: {
+        name: "",
+        starts: "",
+        deadline: "",
+        priority: "Medium",
+        description: "",
+      },
+    };
+  },
+  methods: {
+    async createEvents() {
+      const res3 = await api.post("/events/createEvent", this.project);
+      console.log("Event qoshildi", res3.data);
+
+      this.project = {
+        name: "",
+        starts: "",
+        deadline: "",
+        priority: "Medium",
+        description: "",
+      };
+
+      toastify({
+        text: "Mufoqiyatli qoshildi",
+        duration: 3000,
+        gravity: "top",
+        position: "center",
+        background: "#4caf50",
+        close: true,
+      }).showToast();
+    },
+  },
+};
 </script>
 
 <style scoped>
