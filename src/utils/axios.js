@@ -5,3 +5,10 @@ const api = axios.create({
 });
 
 export default api;
+    baseURL: "https://techinfo.uz/api",
+    headers: {
+        "Content-Type": "application/json"
+    }
+})
+
+export default api;
