@@ -38,9 +38,9 @@
           </div>
           <div class="user-wrapper">
             <div class="users" v-for="(user, index) in users" :key="index">
-              <img :src="user.image" alt="bu yerda evan bor" />
+              <img :src="user.profilePic" alt="bu yerda evan bor" />
               <p>{{ user.name }}</p>
-              <span>{{ user.position }}</span>
+              <!-- <span>{{ user.position }}</span> -->
             </div>
           </div>
         </div>
@@ -96,16 +96,13 @@
 import Sidebar from "../../components/sidebar.vue";
 import api from "../../utils/axios";
 
-import data from "../../data/data.json";
-import events from "../../data/events.json";
-
 export default {
   name: "Dashboard",
 
   data() {
     return {
-      users: data,
-      events,
+      users: [],
+      events: [],
     };
   },
   components: {
@@ -120,6 +117,15 @@ export default {
         console.error("Users kelmadi", error);
       }
     },
+    async getEvents() {
+      try {
+        const res2 = await api.get("/events/events");
+        this.events = res2.data;
+      } catch (error) {
+        console.error("Events kelmadi", error);
+      }
+    },
+
     isNearest(event) {
       const now = new Date();
       const eventDate = new Date(`${event.date}T${event.time}`);
@@ -138,6 +144,13 @@ export default {
       if (date === tomorrow) return "Tomorrow";
       return date;
     },
+  },
+  mounted() {
+    this.getUsers();
+    this.getEvents();
+    setTimeout(() => {
+      console.log(this.users);
+    }, 10000);
   },
   computed: {
     sortedEvents() {

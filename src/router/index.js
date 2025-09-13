@@ -12,6 +12,7 @@ import addProject from '../pages/Add/addProject.vue';
 import ProjectDetails from "../pages/Add/projects.vue"
 import Dashboard from '../pages/Dashboard/dashboard.vue'
 import NearestEvents from '../pages/Dashboard/events.vue'
+import addEvents from "../pages/Dashboard/addEvents.vue";
 import Projects from '../pages/projects/projects.vue'
 import ProjectBoard from '../pages/projects/ProjectBoard.vue'
 import ProjectTimeline from '../pages/projects/ProjectTimeline.vue'
@@ -28,7 +29,6 @@ import CalendarVacations from '../pages/Vacations/CalendarVacations.vue'
 import InfoPortal from '../pages/InfoPortal/InfoPortal.vue'
 import InfoFolder from '../pages/InfoPortal/InfoFolder.vue'
 import Messenger from '../pages/Messenger/Messenger.vue'
-
 
 const routes = [
   {
@@ -142,6 +142,9 @@ const routes = [
   {
     path: "/messenger",
     component: Messenger
+  }, {
+    path: "/addEvents",
+    component: addEvents
   }
 
 ];

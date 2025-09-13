@@ -28,7 +28,11 @@
             >
             <p>Nearest Events</p>
           </div>
-          <button><i class="fa-solid fa-plus"></i>Add Event</button>
+          <button>
+            <router-link to="/addEvents" style="color: white"
+              ><i class="fa-solid fa-plus"></i>Add Event</router-link
+            >
+          </button>
         </div>
       </div>
       <div class="event-grid">
@@ -63,14 +67,14 @@
 </template>
 
 <script>
-import events from "../../data/events.json";
 import Sidebar from "../../components/sidebar.vue";
+import api from "../../utils/axios";
 
 export default {
   name: "Events",
   data() {
     return {
-      events,
+      events: [],
     };
   },
   components: {
@@ -86,6 +90,15 @@ export default {
     },
   },
   methods: {
+    async getEvents() {
+      try {
+        const res2 = await api.get("/events/events");
+        this.events = res2.data;
+      } catch (error) {
+        console.error("Events kelmadi", error);
+      }
+    },
+
     isNearest(event) {
       const now = new Date();
       const futureEvents = this.sortedEvents.filter(
@@ -111,6 +124,9 @@ export default {
         minute: "2-digit",
       });
     },
+  },
+  mounted() {
+    this.getEvents();
   },
 };
 </script>
