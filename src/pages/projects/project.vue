@@ -21,7 +21,7 @@ export default {
             } catch (err) {
                 console.error(err);
 
-                let msg = "Kirishda xatolik yuz berdi";
+                let msg = "Xatolik yuz berdi";
                 if (err.response?.data?.message) {
                     msg = err.response.data.message;
                 }

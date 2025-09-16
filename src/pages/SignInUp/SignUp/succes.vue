@@ -7,6 +7,10 @@
 </template>
 
 <script>
+import Toastify from "toastify-js";
+import "toastify-js/src/toastify.css";
+import api from '../../../utils/axios'
+
 export default {
     data() {
         return {
@@ -40,11 +44,10 @@ export default {
                     close: true,
                 }).showToast();
 
-                this.$router.push("/dashboard");
             } catch (err) {
                 console.error(err);
 
-                let msg = "Kirishda xatolik yuz berdi";
+                let msg = "Registratsiyada xatolik yuz berdi";
                 if (err.response?.data?.message) {
                     msg = err.response.data.message;
                 }
@@ -63,6 +66,7 @@ export default {
                     "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4Yjk2Y2U3OWFhOTY3YjVmZTdlMjFkNSIsImVtYWlsIjoiYWxpY2UzQGV4YW1wbGUuY29tIiwibmFtZSI6IkFsaWNlIiwiaWF0IjoxNzU2OTgyNTAzLCJleHAiOjE3NTY5ODYxMDN9.zW0sWKFsr5hpWO52wFA4RH5Qjncw2jBrV4tu6tOZ9yo"
                 );
                 this.loading = false;
+                this.$router.push("/dashboard");
             }
         }
     }

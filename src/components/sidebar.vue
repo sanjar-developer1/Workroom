@@ -136,7 +136,6 @@ ul {
     gap: calc(21/13.6*1vw);
 }
 
-
 .sidebar-center-support {
     width: calc(168/13.6*1vw);
     height: calc(168/13.6*1vw);
