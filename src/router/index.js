@@ -28,6 +28,7 @@ import CalendarVacations from "../pages/Vacations/CalendarVacations.vue";
 import InfoPortal from "../pages/InfoPortal/InfoPortal.vue";
 import InfoFolder from "../pages/InfoPortal/InfoFolder.vue";
 import Messenger from "../pages/Messenger/Messenger.vue";
+import addEvents from "../pages/Dashboard/addEvents.vue";
 
 
 const routes = [
@@ -155,9 +156,11 @@ const routes = [
     component: () => import("../pages/projects/OneTask.vue"),
     props: true,
     props: (route) => ({ id: route.params.id, task: route.params.task }),
-  },
-    component: Messenger
   }, {
+    path: "/messenger",
+    component: Messenger
+  }
+  , {
     path: "/addEvents",
     component: addEvents
   }
