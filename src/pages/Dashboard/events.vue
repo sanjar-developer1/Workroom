@@ -121,7 +121,7 @@ export default {
       if (dt.toDateString() === today) return "Today";
       if (dt.toDateString() === tomorrow) return "Tomorrow";
 
-      // Sana formatini DD.MM.YYYY shaklida chiqaramiz
+      // Sana formatini DD.MM.YYYY shaklida chiqaramiz ket ma ket
       const day = dt.getDate().toString().padStart(2, "0");
       const month = (dt.getMonth() + 1).toString().padStart(2, "0");
       const year = dt.getFullYear();
