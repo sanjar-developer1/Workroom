@@ -129,7 +129,7 @@ export default {
       return `${day}.${month}.${year}`;
     },
     getDuration(date) {
-      if (!date) return "--"; // agar date bo'sh bo'lsa
+      if (!date) return "--"; // agar date bo'sh bo'lsa oddiy turadi
 
       const dt = new Date(Number(date));
       if (isNaN(dt.getTime())) return "--"; // noto‘g‘ri bo‘lsa
