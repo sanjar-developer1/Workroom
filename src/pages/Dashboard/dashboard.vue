@@ -95,7 +95,6 @@
 <script>
 import Sidebar from "../../components/sidebar.vue";
 import api from "../../utils/axios";
-
 import data from "../../data/data.json";
 import events from "../../data/events.json";
 
