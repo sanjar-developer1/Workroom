@@ -2,7 +2,6 @@
   <div class="events-wrapper">
     <Sidebar />
     <div class="events">
-      <!-- Top qismi -->
       <div class="dashboard-top">
         <label class="search">
           <i class="fa-solid fa-magnifying-glass"></i>
@@ -21,7 +20,6 @@
         </div>
       </div>
 
-      <!-- Center qismi -->
       <div class="dashboard-center">
         <div class="add-tasks-btn">
           <div class="dashboard-center-left" style="align-items: start">
