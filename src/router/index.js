@@ -29,6 +29,7 @@ import InfoPortal from "../pages/InfoPortal/InfoPortal.vue";
 import InfoFolder from "../pages/InfoPortal/InfoFolder.vue";
 import Messenger from "../pages/Messenger/Messenger.vue";
 
+
 const routes = [
   {
     path: "/",
@@ -155,6 +156,12 @@ const routes = [
     props: true,
     props: (route) => ({ id: route.params.id, task: route.params.task }),
   },
+    component: Messenger
+  }, {
+    path: "/addEvents",
+    component: addEvents
+  }
+
 ];
 
 // route boyicha faylni qidiryatganda figmaga etiborlik bolinglar, figmadagi holatlar (hover va shunga oxshaganlar)ni yozmadim!

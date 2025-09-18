@@ -2,6 +2,7 @@
   <div class="events-wrapper">
     <Sidebar />
     <div class="events">
+      <!-- Top qismi -->
       <div class="dashboard-top">
         <label class="search">
           <i class="fa-solid fa-magnifying-glass"></i>
@@ -19,20 +20,27 @@
           </router-link>
         </div>
       </div>
+
+      <!-- Center qismi -->
       <div class="dashboard-center">
         <div class="add-tasks-btn">
           <div class="dashboard-center-left" style="align-items: start">
-            <router-link to="/dashboard" style="color: #3f8cff"
-              ><i class="fa-solid fa-arrow-left"></i>Back to
-              Dashboard</router-link
-            >
+            <router-link to="/dashboard" style="color: #3f8cff">
+              <i class="fa-solid fa-arrow-left"></i>Back to Dashboard
+            </router-link>
             <p>Nearest Events</p>
           </div>
-          <button><i class="fa-solid fa-plus"></i>Add Event</button>
+          <button>
+            <router-link to="/addEvents" style="color: white">
+              <i class="fa-solid fa-plus"></i>Add Event
+            </router-link>
+          </button>
         </div>
       </div>
+
+      <!-- Eventlar grid -->
       <div class="event-grid">
-        <div class="event-card" v-for="event in sortedEvents" :key="event.id">
+        <div class="event-card" v-for="event in sortedEvents" :key="event._id">
           <div
             class="event-line"
             :class="{
@@ -42,12 +50,12 @@
           ></div>
 
           <div class="event-info">
-            <h3>{{ event.title }}</h3>
-            <p>{{ formatDateTime(event.date, event.time) }}</p>
+            <h3>{{ event.name }}</h3>
+            <span class="event-duration">{{ getDuration(event.date) }}</span>
           </div>
 
           <div class="event-right">
-            <span class="event-duration">{{ event.duration }}</span>
+            <span class="event-duration">{{ getDuration(event.date) }}</span>
             <i
               class="fa-solid"
               :class="{
@@ -63,14 +71,14 @@
 </template>
 
 <script>
-import events from "../../data/events.json";
 import Sidebar from "../../components/sidebar.vue";
+import api from "../../utils/axios";
 
 export default {
   name: "Events",
   data() {
     return {
-      events,
+      events: [],
     };
   },
   components: {
@@ -79,38 +87,69 @@ export default {
   computed: {
     sortedEvents() {
       return [...this.events].sort((a, b) => {
-        const dateA = new Date(`${a.date}T${a.time}`);
-        const dateB = new Date(`${b.date}T${b.time}`);
+        const dateA = new Date(Number(a.date));
+        const dateB = new Date(Number(b.date));
         return dateA - dateB;
       });
     },
   },
   methods: {
+    async getEvents() {
+      try {
+        const res2 = await api.get("/events/events");
+        this.events = res2.data;
+      } catch (error) {
+        console.error("Events kelmadi", error);
+      }
+    },
+
     isNearest(event) {
       const now = new Date();
       const futureEvents = this.sortedEvents.filter(
-        (e) => new Date(`${e.date}T${e.time}`) > now
+        (e) => new Date(Number(e.date)) > now
       );
-      return futureEvents.length > 0 && futureEvents[0].id === event.id;
+      return futureEvents.length > 0 && futureEvents[0]._id === event._id;
     },
-    formatDateTime(date, time) {
-      const today = new Date().toISOString().split("T")[0];
-      const tomorrow = new Date(Date.now() + 86400000)
-        .toISOString()
-        .split("T")[0];
 
-      if (date === today) return `Today | ${time}`;
-      if (date === tomorrow) return `Tomorrow | ${time}`;
+    formatDateTime(date) {
+      const dt = new Date(Number(date));
+      if (isNaN(dt.getTime())) return "--";
 
-      const dt = new Date(`${date}T${time}`);
-      return dt.toLocaleString("en-US", {
-        weekday: "short",
-        month: "short",
-        day: "numeric",
-        hour: "2-digit",
-        minute: "2-digit",
-      });
+      const today = new Date().toDateString();
+      const tomorrow = new Date(Date.now() + 86400000).toDateString();
+
+      if (dt.toDateString() === today) return "Today";
+      if (dt.toDateString() === tomorrow) return "Tomorrow";
+
+      // Sana formatini DD.MM.YYYY shaklida chiqaramiz
+      const day = dt.getDate().toString().padStart(2, "0");
+      const month = (dt.getMonth() + 1).toString().padStart(2, "0");
+      const year = dt.getFullYear();
+
+      return `${day}.${month}.${year}`;
     },
+    getDuration(date) {
+      if (!date) return "--"; // agar date bo'sh bo'lsa oddiy turadi
+
+      const dt = new Date(Number(date));
+      if (isNaN(dt.getTime())) return "--"; // noto‘g‘ri bo‘lsa
+
+      const now = new Date();
+      const diffMs = dt - now;
+
+      if (diffMs <= 0) return "Started";
+
+      const diffMins = Math.floor(diffMs / (1000 * 60));
+      const hours = Math.floor(diffMins / 60);
+      const minutes = diffMins % 60;
+
+      if (hours > 0) return `${hours}h ${minutes}m left`;
+      return `${minutes}m left`;
+    },
+  },
+  mounted() {
+    this.getEvents();
+    this.getDuration();
   },
 };
 </script>
