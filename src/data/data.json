@@ -1,217 +1,146 @@
-{
-  "users": [
-    {
-      "id": 1,
-      "name": "Evan Yates",
-      "age": 22,
-      "position": "UI/UX Designer",
-      "company": "Cadabra",
-      "location": "NYC, New York, USA",
-      "date": "May 19,1996",
-      "contact": {
-        "email": "evanyates@gmail.com",
-        "phone": "+1 675 346 23-10"
-      },
-      "tasks": {
-        "backlogTask": 2,
-        "taskInProgress": 10,
-        "tasksInReview": 5
-      },
-      "vacations": {
-        "vacation": 15,
-        "sickLeave": 3,
-        "workRemotely": 50
-      },
-      "level": "Senior",
-      "img": "src/assets/images/evan.png",
-      "message": [
-        {
-          "text": "Hi! Please, change the status in this task",
-          "sender": "Evan Yates"
-        }
-      ]
+[
+  {
+    "id": "48291736",
+    "name": "Abdulaziz",
+    "email": "abdulaziz@example.com",
+    "password": "aziz12345",
+    "age": 20,
+    "position": "Developer",
+    "company": "TechnoSoft",
+    "location": "Tashkent",
+    "birthday": "2005-07-15",
+    "phone": 998931112233,
+    "tasks": {
+      "backLogTasks": 4,
+      "taskInProgress": 1,
+      "taskInReview": 2
     },
-    {
-      "id": 2,
-      "name": "Shawn Stone",
-      "age": 28,
-      "position": "UI/UX Designer",
-      "company": "Cadabra",
-      "location": "NYC, New York, USA",
-      "date": "May 19,1996",
-      "contact": {
-        "email": "shawnstone@gmail.com",
-        "phone": "+1 675 346 23-10"
-      },
-      "tasks": {
-        "backlogTask": 0,
-        "taskInProgress": 16,
-        "tasksInReview": 6
-      },
-      "vacations": {
-        "vacation": 10,
-        "sickLeave": 6,
-        "workRemotely": 34
-      },
-      "level": "Middle",
-      "img": "src/assets/images/shawn.png",
-      "message": "Hi! Please, change the status in this task"
+    "image": "https://picsum.photos/id/567/200/200"
+  },
+  {
+    "id": "73920184",
+    "name": "Dilshod",
+    "email": "dilshod@example.com",
+    "password": "dil12345",
+    "age": 25,
+    "position": "Designer",
+    "company": "Innova",
+    "location": "Samarkand",
+    "birthday": "1999-03-22",
+    "phone": 998901234567,
+    "tasks": {
+      "backLogTasks": 3,
+      "taskInProgress": 2,
+      "taskInReview": 1
     },
-    {
-      "id": 3,
-      "name": "Emily Tyler",
-      "age": 22,
-      "position": "Copywriter",
-      "company": "Cadabra",
-      "location": "NYC, New York, USA",
-      "date": "May 19,1996",
-      "contact": {
-        "email": "emilytyler@gmail.com",
-        "phone": "+1 675 346 23-10"
-      },
-      "tasks": {
-        "backlogTask": 1,
-        "taskInProgress": 20,
-        "tasksInReview": 2
-      },
-      "vacations": {
-        "vacation": 10,
-        "sickLeave": 5,
-        "workRemotely": 19
-      },
-      "level": "Middle",
-      "img": "src/assets/images/emily.png",
-      "message": "Hi! Please, change the status in this task"
+    "image": "https://picsum.photos/id/1012/200/200"
+  },
+  {
+    "id": "56290371",
+    "name": "Malika",
+    "email": "malika@example.com",
+    "password": "malika12",
+    "age": 28,
+    "position": "Manager",
+    "company": "DesignPro",
+    "location": "Bukhara",
+    "birthday": "1996-11-10",
+    "phone": 998907654321,
+    "tasks": {
+      "backLogTasks": 5,
+      "taskInProgress": 3,
+      "taskInReview": 2
     },
-    {
-      "id": 4,
-      "name": "Blake Silva",
-      "age": 25,
-      "position": "IOS Developer",
-      "company": "Cadabra",
-      "location": "NYC, New York, USA",
-      "date": "May 19,1996",
-      "contact": {
-        "email": "blakesilva@gmail.com",
-        "phone": "+1 675 346 23-10"
-      },
-      "tasks": {
-        "backlogTask": 0,
-        "taskInProgress": 20,
-        "tasksInReview": 2
-      },
-      "vacations": {
-        "vacation": 8,
-        "sickLeave": 7,
-        "workRemotely": 41
-      },
-      "level": "Senior",
-      "img": "src/assets/images/blake.png",
-      "message": "Hi! Please, change the status in this task"
+    "image": "https://picsum.photos/id/1013/200/200"
+  },
+  {
+    "id": "29581746",
+    "name": "Javlon",
+    "email": "javlon@example.com",
+    "password": "javlon77",
+    "age": 22,
+    "position": "Developer",
+    "company": "SoftVision",
+    "location": "Namangan",
+    "birthday": "2002-02-14",
+    "phone": 998935551122,
+    "tasks": {
+      "backLogTasks": 2,
+      "taskInProgress": 1,
+      "taskInReview": 1
     },
-    {
-      "id": 5,
-      "name": "Oscar Holloway",
-      "age": 20,
-      "position": "UI/UX Designer",
-      "company": "Cadabra",
-      "location": "NYC, New York, USA",
-      "date": "May 19,1996",
-      "contact": {
-        "email": "oscarholloway@gmail.com",
-        "phone": "+1 675 346 23-10"
-      },
-      "tasks": {
-        "backlogTask": 1,
-        "taskInProgress": 20,
-        "tasksInReview": 2
-      },
-      "vacations": {
-        "vacation": 14,
-        "sickLeave": 4,
-        "workRemotely": 38
-      },
-      "level": "Middle",
-      "img": "src/assets/images/oscar.png",
-      "message": "Hi! Please, change the status in this task"
+    "image": "https://picsum.photos/id/1014/200/200"
+  },
+  {
+    "id": "80451392",
+    "name": "Gulnoza",
+    "email": "gulnoza@example.com",
+    "password": "gul2024",
+    "age": 27,
+    "position": "Designer",
+    "company": "ArtHouse",
+    "location": "Andijan",
+    "birthday": "1997-08-30",
+    "phone": 998936667788,
+    "tasks": {
+      "backLogTasks": 6,
+      "taskInProgress": 2,
+      "taskInReview": 4
     },
-    {
-      "id": 6,
-      "name": "Wayne Marsh",
-      "age": 24,
-      "position": "Copywriter",
-      "company": "Cadabra",
-      "location": "NYC, New York, USA",
-      "date": "May 19,1996",
-      "contact": {
-        "email": "waynemarsh@gmail.com",
-        "phone": "+1 675 346 23-10"
-      },
-      "tasks": {
-        "backlogTask": 1,
-        "taskInProgress": 14,
-        "tasksInReview": 3
-      },
-      "vacations": {
-        "vacation": 12,
-        "sickLeave": 6,
-        "workRemotely": 45
-      },
-      "level": "Junior",
-      "img": "src/assets/images/wayne.png",
-      "message": "Hi! Please, change the status in this task"
+    "image": "https://picsum.photos/id/1015/200/200"
+  },
+  {
+    "id": "39105628",
+    "name": "Sherzod",
+    "email": "sherzod@example.com",
+    "password": "sher777",
+    "age": 30,
+    "position": "Manager",
+    "company": "BizPro",
+    "location": "Fergana",
+    "birthday": "1994-01-19",
+    "phone": 998935009988,
+    "tasks": {
+      "backLogTasks": 3,
+      "taskInProgress": 2,
+      "taskInReview": 5
     },
-    {
-      "id": 7,
-      "name": "Jeremy Barrett",
-      "age": 27,
-      "position": "Copywriter",
-      "company": "Cadabra",
-      "location": "NYC, New York, USA",
-      "date": "May 19,1996",
-      "contact": {
-        "email": "jeremybarrett@gmail.com",
-        "phone": "+1 675 346 23-10"
-      },
-      "tasks": {
-        "backlogTask": 0,
-        "taskInProgress": 8,
-        "tasksInReview": 6
-      },
-      "vacations": {
-        "vacation": 10,
-        "sickLeave": 5,
-        "workRemotely": 12
-      },
-      "level": "Middle",
-      "img": "src/assets/images/jeremy.png",
-      "message": "Hi! Please, change the status in this task"
+    "image": "https://picsum.photos/id/1016/200/200"
+  },
+  {
+    "id": "64089215",
+    "name": "Madina",
+    "email": "madina@example.com",
+    "password": "madina55",
+    "age": 24,
+    "position": "Developer",
+    "company": "CodeLab",
+    "location": "Khiva",
+    "birthday": "2000-05-12",
+    "phone": 998932221144,
+    "tasks": {
+      "backLogTasks": 2,
+      "taskInProgress": 3,
+      "taskInReview": 1
     },
-    {
-      "id": 8,
-      "name": "Lenora Fowler",
-      "age": 22,
-      "position": "Frontend Developer",
-      "company": "Algoritm",
-      "location": "NYC, New York, USA",
-      "date": "May 19,1986",
-      "contact": {
-        "email": "lenorafowler@gmail.com",
-        "phone": "+1 675 346 23-10"
-      },
-      "tasks": {
-        "backlogTask": 2,
-        "taskInProgress": 5,
-        "tasksInReview": 10
-      },
-      "vacations": {
-        "vacation": 6,
-        "sickLeave": 3,
-        "workRemotely": 10
-      },
-      "level": "Junior",
-      "img": "src/assets/images/lenora.png",
-      "message": "Hi! Please, change the status in this task"
-    }
-  ]
-}
+    "image": "https://picsum.photos/id/54/200/200"
+  },
+  {
+    "id": "71904583",
+    "name": "Iroda",
+    "email": "iroda@example.com",
+    "password": "iroda99",
+    "age": 26,
+    "position": "Designer",
+    "company": "PixelArt",
+    "location": "Nukus",
+    "birthday": "1998-04-25",
+    "phone": 998939998877,
+    "tasks": {
+      "backLogTasks": 4,
+      "taskInProgress": 1,
+      "taskInReview": 3
+    },
+    "image": "https://picsum.photos/id/1018/200/200"
+  }
+]
