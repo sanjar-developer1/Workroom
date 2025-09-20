@@ -71,9 +71,7 @@ export default {
     methods: {
         nextStep() {
             if (this.companyName && this.businessDirection && this.teamSize) {
-                localStorage.setItem('companyName', this.companyName);
-                localStorage.setItem('businessDirection', this.businessDirection);
-                localStorage.setItem('teamSize', this.teamSize);
+                localStorage.setItem('stepInfo3', this.companyName);
 
                 toastify({
                     text: "Kirish muvaffaqiyatli",

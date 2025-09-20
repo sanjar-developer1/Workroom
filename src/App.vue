@@ -21,6 +21,14 @@ export default {}
   text-decoration: none;
 }
 
+::-webkit-scrollbar{
+  width: 5px;
+}
+::-webkit-scrollbar-thumb{
+  width: 5px;
+  background-color: gray;
+}
+
 i {
   width: calc(16/13.6*1vw);
   margin-left: calc(11/13.6*1vw);

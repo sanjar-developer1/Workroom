@@ -28,6 +28,11 @@
                         style="width: calc(24/13.6*1vw); height: calc(24/13.6*1vw);">
                     <p>Employees</p>
                 </router-link>
+                                <router-link to="/messenger" class="li">
+                    <img src="../assets/images/messenger.png" alt="bu yerda messenger icon bor"
+                        style="width: calc(24/13.6*1vw); height: calc(24/13.6*1vw);">
+                    <p>Messenger</p>
+                </router-link>
             </ul>
         </div>
         <div class="sidebar-center">

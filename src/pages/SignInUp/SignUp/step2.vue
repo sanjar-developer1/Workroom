@@ -15,7 +15,7 @@
             </div>
             <div class="form-group">
                 <label for="password">What describes you best?</label>
-                <select name="description" id="description" v-model="description">
+                <select v-model="description">
                     <option value="">Select an option</option>
                     <option value="developer">Developer</option>
                     <option value="designer">Designer</option>
@@ -52,8 +52,7 @@ export default {
     methods: {
         nextStep() {
             if (this.serviceReason && this.description) {
-                localStorage.setItem('serviceReason', this.serviceReason);
-                localStorage.setItem('description', this.description);
+                localStorage.setItem('stepInfo2', this.description);
 
                 toastify({
                     text: "Kirish muvaffaqiyatli",

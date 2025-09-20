@@ -50,12 +50,14 @@ export default {
         return {
             email: '',
             password: '',
-            phone: ''
+            phone: null
         }
     },
     methods: {
         nextStep() {
             if (this.email && this.password && this.phone) {
+                localStorage.setItem('stepInfo1', JSON.stringify({ email: this.email, phone: this.phone, password: this.password}))
+
                 toastify({
                     text: "Kirish muvaffaqiyatli",
                     duration: 3000,
@@ -107,8 +109,6 @@ export default {
     text-transform: uppercase;
     color: #3F8CFF;
 }
-
-
 
 .phone-input {
     display: flex;
