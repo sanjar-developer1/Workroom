@@ -145,6 +145,10 @@ const routes = [
     component: Messenger
   },
   {
+    path: "/messenger/:chatId",
+    component: Messenger
+  },
+  {
     path: "/project/:projectId",
     component: project
   }

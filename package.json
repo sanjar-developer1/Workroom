@@ -9,6 +9,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fullcalendar/daygrid": "^6.1.19",
+    "@fullcalendar/interaction": "^6.1.19",
+    "@fullcalendar/vue3": "^6.1.19",
     "axios": "^1.11.0",
     "lucide-vue-next": "^0.544.0",
     "toastify-js": "^1.12.0",

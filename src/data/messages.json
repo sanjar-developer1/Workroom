@@ -1,0 +1,127 @@
+[
+  {
+    "id": 1,
+    "person": {
+      "name": "Alice Carter",
+      "position": "Frontend Developer",
+      "profilePic": "https://picsum.photos/id/201/200/200"
+    },
+    "messages": [
+      {"sender": "opposite", "date": "01/09/2025", "time": "08:15", "text": "Hey Alice, are you free to review my pull request?"},
+      {"sender": "person", "date": "01/09/2025", "time": "08:17", "text": "Sure, drop me the link."},
+      {"sender": "opposite", "date": "01/09/2025", "time": "08:18", "text": "Here’s the repo link: github.com/project123."},
+      {"sender": "person", "date": "01/09/2025", "time": "08:20", "text": "I’ll check it now."},
+      {"sender": "person", "date": "01/09/2025", "time": "08:35", "text": "You need to fix indentation on the Navbar component."},
+      {"sender": "opposite", "date": "01/09/2025", "time": "08:37", "text": "Got it, will do."},
+      {"sender": "person", "date": "01/09/2025", "time": "08:39", "text": "Also, don’t forget responsive breakpoints."},
+      {"sender": "opposite", "date": "01/09/2025", "time": "08:41", "text": "Right, I totally missed that."},
+      {"sender": "person", "date": "01/09/2025", "time": "08:43", "text": "Add alt tags for images too."},
+      {"sender": "opposite", "date": "01/09/2025", "time": "08:44", "text": "Thanks for catching that."},
+      {"sender": "person", "date": "01/09/2025", "time": "08:46", "text": "No worries, happens to all of us."},
+      {"sender": "opposite", "date": "01/09/2025", "time": "08:49", "text": "Okay, I fixed it and pushed new commits."},
+      {"sender": "person", "date": "01/09/2025", "time": "08:55", "text": "Looks much better now."},
+      {"sender": "opposite", "date": "01/09/2025", "time": "08:57", "text": "Great! Can we merge?"},
+      {"sender": "person", "date": "01/09/2025", "time": "08:59", "text": "Yes, approved ✅"}
+    ]
+  },
+  {
+    "id": 2,
+    "person": {
+      "name": "David Kim",
+      "position": "Data Scientist",
+      "profilePic": "https://picsum.photos/id/202/200/200"
+    },
+    "messages": [
+      {"sender": "opposite", "date": "05/09/2025", "time": "14:00", "text": "David, what model did you use for the predictions?"},
+      {"sender": "person", "date": "05/09/2025", "time": "14:01", "text": "Gradient Boosting with tuned hyperparameters."},
+      {"sender": "opposite", "date": "05/09/2025", "time": "14:03", "text": "Interesting, what’s the accuracy?"},
+      {"sender": "person", "date": "05/09/2025", "time": "14:05", "text": "About 92% on the validation set."},
+      {"sender": "opposite", "date": "05/09/2025", "time": "14:07", "text": "And recall?"},
+      {"sender": "person", "date": "05/09/2025", "time": "14:09", "text": "0.87, slightly lower but acceptable."},
+      {"sender": "opposite", "date": "05/09/2025", "time": "14:11", "text": "Could deep learning improve it?"},
+      {"sender": "person", "date": "05/09/2025", "time": "14:13", "text": "Maybe, but it’s heavier. Might overfit too."},
+      {"sender": "opposite", "date": "05/09/2025", "time": "14:15", "text": "Makes sense. Did you visualize feature importance?"},
+      {"sender": "person", "date": "05/09/2025", "time": "14:16", "text": "Yes, customer age and income are top predictors."},
+      {"sender": "opposite", "date": "05/09/2025", "time": "14:18", "text": "That’s useful for the business team."},
+      {"sender": "person", "date": "05/09/2025", "time": "14:20", "text": "I’ll prepare a report with charts."},
+      {"sender": "opposite", "date": "05/09/2025", "time": "14:21", "text": "Perfect."},
+      {"sender": "person", "date": "05/09/2025", "time": "14:22", "text": "You’ll get it by tomorrow morning."},
+      {"sender": "opposite", "date": "05/09/2025", "time": "14:23", "text": "Thanks a ton!"}
+    ]
+  },
+  {
+    "id": 3,
+    "person": {
+      "name": "Maria Lopez",
+      "position": "Marketing Manager",
+      "profilePic": "https://picsum.photos/id/203/200/200"
+    },
+    "messages": [
+      {"sender": "opposite", "date": "10/09/2025", "time": "10:00", "text": "Maria, the campaign draft is ready."},
+      {"sender": "person", "date": "10/09/2025", "time": "10:01", "text": "Send it over, please."},
+      {"sender": "opposite", "date": "10/09/2025", "time": "10:02", "text": "Here’s the doc."},
+      {"sender": "person", "date": "10/09/2025", "time": "10:05", "text": "I like the visuals, but tone needs work."},
+      {"sender": "opposite", "date": "10/09/2025", "time": "10:07", "text": "How so?"},
+      {"sender": "person", "date": "10/09/2025", "time": "10:09", "text": "It should sound more engaging, less formal."},
+      {"sender": "opposite", "date": "10/09/2025", "time": "10:10", "text": "Got it, I’ll rewrite the copy."},
+      {"sender": "person", "date": "10/09/2025", "time": "10:13", "text": "Also, the CTA button needs to be brighter."},
+      {"sender": "opposite", "date": "10/09/2025", "time": "10:15", "text": "Good catch, will adjust color scheme."},
+      {"sender": "person", "date": "10/09/2025", "time": "10:18", "text": "Timeline is tight, can you finish today?"},
+      {"sender": "opposite", "date": "10/09/2025", "time": "10:20", "text": "Yes, I’ll prioritize this."},
+      {"sender": "person", "date": "10/09/2025", "time": "10:23", "text": "Thanks, Maria appreciates speed."},
+      {"sender": "opposite", "date": "10/09/2025", "time": "10:25", "text": "On it."},
+      {"sender": "person", "date": "10/09/2025", "time": "10:26", "text": "Message me once done."},
+      {"sender": "opposite", "date": "10/09/2025", "time": "10:28", "text": "Sure thing."}
+    ]
+  },
+  {
+    "id": 4,
+    "person": {
+      "name": "Omar Hassan",
+      "position": "Backend Engineer",
+      "profilePic": "https://picsum.photos/id/204/200/200"
+    },
+    "messages": [
+      {"sender": "opposite", "date": "12/09/2025", "time": "16:30", "text": "Omar, the API is returning 500 errors."},
+      {"sender": "person", "date": "12/09/2025", "time": "16:31", "text": "Let me check logs."},
+      {"sender": "person", "date": "12/09/2025", "time": "16:33", "text": "Seems like a database timeout."},
+      {"sender": "opposite", "date": "12/09/2025", "time": "16:35", "text": "Any quick fix?"},
+      {"sender": "person", "date": "12/09/2025", "time": "16:36", "text": "I’ll increase pool size and optimize queries."},
+      {"sender": "opposite", "date": "12/09/2025", "time": "16:37", "text": "Cool, when can we expect it?"},
+      {"sender": "person", "date": "12/09/2025", "time": "16:40", "text": "Give me 20 minutes."},
+      {"sender": "opposite", "date": "12/09/2025", "time": "16:45", "text": "Thanks, client demo is in an hour."},
+      {"sender": "person", "date": "12/09/2025", "time": "16:50", "text": "Fix deployed."},
+      {"sender": "opposite", "date": "12/09/2025", "time": "16:52", "text": "API is stable now."},
+      {"sender": "person", "date": "12/09/2025", "time": "16:54", "text": "Good, I’ll keep monitoring."},
+      {"sender": "opposite", "date": "12/09/2025", "time": "16:55", "text": "Saved the day!"},
+      {"sender": "person", "date": "12/09/2025", "time": "16:57", "text": "Haha, part of the job."},
+      {"sender": "opposite", "date": "12/09/2025", "time": "16:59", "text": "Much appreciated."},
+      {"sender": "person", "date": "12/09/2025", "time": "17:00", "text": "Anytime."}
+    ]
+  },
+  {
+    "id": 5,
+    "person": {
+      "name": "Sophia Nguyen",
+      "position": "Content Writer",
+      "profilePic": "https://picsum.photos/id/100/200/200"
+    },
+    "messages": [
+      {"sender": "opposite", "date": "14/09/2025", "time": "11:00", "text": "Sophia, can you proofread my blog draft?"},
+      {"sender": "person", "date": "14/09/2025", "time": "11:02", "text": "Of course, send it over."},
+      {"sender": "opposite", "date": "14/09/2025", "time": "11:03", "text": "Just emailed it."},
+      {"sender": "person", "date": "14/09/2025", "time": "11:10", "text": "The intro is strong, but paragraphs are too long."},
+      {"sender": "opposite", "date": "14/09/2025", "time": "11:12", "text": "Should I split them?"},
+      {"sender": "person", "date": "14/09/2025", "time": "11:13", "text": "Yes, makes it easier to read."},
+      {"sender": "opposite", "date": "14/09/2025", "time": "11:14", "text": "Noted."},
+      {"sender": "person", "date": "14/09/2025", "time": "11:15", "text": "Also, avoid passive voice."},
+      {"sender": "opposite", "date": "14/09/2025", "time": "11:16", "text": "I’ll rewrite those sentences."},
+      {"sender": "person", "date": "14/09/2025", "time": "11:18", "text": "Perfect. The conclusion is missing a CTA."},
+      {"sender": "opposite", "date": "14/09/2025", "time": "11:19", "text": "I’ll add a call-to-action."},
+      {"sender": "person", "date": "14/09/2025", "time": "11:21", "text": "Great, then it’ll be ready to publish."},
+      {"sender": "opposite", "date": "14/09/2025", "time": "11:22", "text": "Thanks for your feedback."},
+      {"sender": "person", "date": "14/09/2025", "time": "11:23", "text": "Happy to help."},
+      {"sender": "opposite", "date": "14/09/2025", "time": "11:24", "text": "You saved me hours!"}
+    ]
+  }
+]
